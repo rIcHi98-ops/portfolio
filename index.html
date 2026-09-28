@@ -9,9 +9,9 @@
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="assets/styles.css?v=20260914">
-    <script src="assets/i18n.js?v=20260914" defer></script>
-    <script src="assets/app.js" defer></script>
+    <link rel="stylesheet" href="assets/styles.css?v=20260925">
+    <script src="assets/i18n.js?v=20260925" defer></script>
+    <script src="assets/app.js?v=20260925" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -29,7 +29,8 @@
       <nav class="nav-links" id="site-navigation" aria-label="Seitenbereiche">
         <a href="#leistungen">Leistungen</a>
         <a href="#arbeiten">Arbeiten</a>
-        <a href="#preis">Preisrahmen</a>
+        <!-- PREISKALKULATOR DEAKTIVIERT: Zum Reaktivieren das hidden-Attribut entfernen. -->
+        <a href="#preis" data-price-link hidden>Preisrahmen</a>
         <a href="#lab">Workflow Lab</a>
         <a href="#kontakt">Kontakt</a>
         <button class="language-switch" type="button" data-language-switch aria-label="Website auf Englisch anzeigen"><span data-lang-code="de">DE</span><i aria-hidden="true">/</i><span data-lang-code="en">EN</span></button>
@@ -176,7 +177,8 @@
         <div class="work-footnote reveal"><span>✦</span><p>Die Auswahl zeigt gestalterische Arbeiten und Konzeptstudien. Jedes Projekt wird in Struktur, Stil und Technik individuell auf seinen Einsatzzweck zugeschnitten.</p></div>
       </section>
 
-      <section class="section estimator-section" id="preis" aria-labelledby="estimator-title">
+      <!-- PREISKALKULATOR DEAKTIVIERT: Inhalt bleibt vollständig erhalten. Zum Reaktivieren hidden entfernen, beide data-price-link-Verweise einblenden und die nachfolgenden Section-Nummern wieder um eins erhöhen. -->
+      <section class="section estimator-section" id="preis" aria-labelledby="estimator-title" data-price-feature="paused" hidden>
         <div class="section-kicker reveal"><span>03</span> Unverbindlicher Preisrahmen</div>
         <div class="section-intro reveal">
           <h2 id="estimator-title">Was könnte Ihr Projekt<br>ungefähr <em>kosten?</em></h2>
@@ -262,7 +264,7 @@
       </section>
 
       <section class="section lab-section" id="lab" aria-labelledby="lab-title">
-        <div class="section-kicker reveal"><span>04</span> KI-Automatisierung · Leistung &amp; Demo</div>
+        <div class="section-kicker reveal"><span>03</span> KI-Automatisierung · Leistung &amp; Demo</div>
         <div class="section-intro reveal">
           <h2 id="lab-title">Vom Engpass zur<br><em>passenden Automatisierung.</em></h2>
           <p>KI-Automatisierungen sind ein fester Bestandteil meines Leistungsangebots. Ich entwickle sie passend zum jeweiligen Unternehmen, Prozess und gewünschten Grad menschlicher Kontrolle.</p>
@@ -304,7 +306,7 @@
       </section>
 
       <section class="section process-section" id="prozess" aria-labelledby="process-title">
-        <div class="section-kicker reveal"><span>05</span> Prozess</div>
+        <div class="section-kicker reveal"><span>04</span> Prozess</div>
         <div class="section-intro reveal">
           <h2 id="process-title">Vom ersten Gespräch<br>bis zum stabilen <em>Launch.</em></h2>
           <p>Ein klarer Ablauf hält Entscheidungen nachvollziehbar, reduziert Schleifen und schafft früh etwas Greifbares.</p>
@@ -318,7 +320,7 @@
       </section>
 
       <section class="section profile-section" id="profil" aria-labelledby="profile-title">
-        <div class="section-kicker reveal"><span>06</span> Mein Profil</div>
+        <div class="section-kicker reveal"><span>05</span> Mein Profil</div>
         <div class="profile-grid">
           <div class="profile-copy reveal">
             <h2 id="profile-title">Gestaltung im Kopf.<br>Technik in den Händen.<br><em>Neugier im System.</em></h2>
@@ -360,7 +362,7 @@
       </section>
 
       <section class="section formats-section" id="formate" aria-labelledby="formats-title">
-        <div class="section-kicker reveal"><span>07</span> Projektformate</div>
+        <div class="section-kicker reveal"><span>06</span> Projektformate</div>
         <div class="section-intro reveal"><h2 id="formats-title">Kleine Projekte.<br>Klare <em>Aufgabe.</em></h2><p>Diese Beispiele zeigen typische Formate, die ich konzipieren, gestalten, umsetzen und technisch begleiten kann.</p></div>
         <div class="format-grid reveal">
           <article class="format-card tilt-card" tabindex="0"><span>LOCAL BUSINESS</span><h3>Website für ein lokales Unternehmen</h3><p>Kompakte Unternehmensseite mit Leistungen, Kontaktwegen und lokaler Ausrichtung.</p><small>Website · Sichtbarkeit</small></article>
@@ -371,16 +373,17 @@
       </section>
 
       <section class="section fit-section" aria-labelledby="fit-title">
-        <div class="section-kicker reveal"><span>08</span> Zusammenarbeit</div>
+        <div class="section-kicker reveal"><span>07</span> Zusammenarbeit</div>
         <div class="fit-layout">
           <div class="fit-title reveal"><h2 id="fit-title">Persönlich genug für kurze Wege.<br>Technisch genug für <em>saubere Systeme.</em></h2></div>
+          <p class="fit-mobile-hint">Tippen Sie auf eine Karte, um mehr zu erfahren.</p>
           <div class="fit-grid">
-            <article class="fit-card reveal"><span class="fit-number">01</span><h3>Ein direkter Ansprechpartner</h3><p>Keine wechselnden Kontakte und keine unnötigen Abstimmungsschleifen.</p></article>
-            <article class="fit-card reveal"><span class="fit-number">02</span><h3>Klare Kommunikation</h3><p>Verständliche Entscheidungen, realistische Einschätzungen und transparente Schritte.</p></article>
-            <article class="fit-card reveal"><span class="fit-number">03</span><h3>Saubere Umsetzung</h3><p>Strukturierter Code, schnelle Ladezeiten und ein System, das langfristig wartbar bleibt.</p></article>
-            <article class="fit-card reveal"><span class="fit-number">04</span><h3>Breite mit Richtung</h3><p>Gestaltung, Frontend, KI und Conversion werden nicht getrennt, sondern als Ganzes gedacht.</p></article>
-            <article class="fit-card reveal"><span class="fit-number">05</span><h3>Lernen am echten Projekt</h3><p>Neue Technologien erschließe ich pragmatisch, eigenständig und mit sichtbarem Ergebnis.</p></article>
-            <article class="fit-card reveal"><span class="fit-number">06</span><h3>Wirkung statt Buzzwords</h3><p>Technik ist dann wertvoll, wenn sie Abläufe verbessert und für Menschen einen Unterschied macht.</p></article>
+            <details class="fit-card reveal" open><summary class="fit-card-summary"><h3><span class="fit-number">01</span><span class="fit-card-title">Ein direkter Ansprechpartner</span><span class="fit-toggle-icon" aria-hidden="true">+</span></h3></summary><div class="fit-card-content"><p>Keine wechselnden Kontakte und keine unnötigen Abstimmungsschleifen.</p></div></details>
+            <details class="fit-card reveal" open><summary class="fit-card-summary"><h3><span class="fit-number">02</span><span class="fit-card-title">Klare Kommunikation</span><span class="fit-toggle-icon" aria-hidden="true">+</span></h3></summary><div class="fit-card-content"><p>Verständliche Entscheidungen, realistische Einschätzungen und transparente Schritte.</p></div></details>
+            <details class="fit-card reveal" open><summary class="fit-card-summary"><h3><span class="fit-number">03</span><span class="fit-card-title">Saubere Umsetzung</span><span class="fit-toggle-icon" aria-hidden="true">+</span></h3></summary><div class="fit-card-content"><p>Strukturierter Code, schnelle Ladezeiten und ein System, das langfristig wartbar bleibt.</p></div></details>
+            <details class="fit-card reveal" open><summary class="fit-card-summary"><h3><span class="fit-number">04</span><span class="fit-card-title">Breite mit Richtung</span><span class="fit-toggle-icon" aria-hidden="true">+</span></h3></summary><div class="fit-card-content"><p>Gestaltung, Frontend, KI und Conversion werden nicht getrennt, sondern als Ganzes gedacht.</p></div></details>
+            <details class="fit-card reveal" open><summary class="fit-card-summary"><h3><span class="fit-number">05</span><span class="fit-card-title">Lernen am echten Projekt</span><span class="fit-toggle-icon" aria-hidden="true">+</span></h3></summary><div class="fit-card-content"><p>Neue Technologien erschließe ich pragmatisch, eigenständig und mit sichtbarem Ergebnis.</p></div></details>
+            <details class="fit-card reveal" open><summary class="fit-card-summary"><h3><span class="fit-number">06</span><span class="fit-card-title">Wirkung statt Buzzwords</span><span class="fit-toggle-icon" aria-hidden="true">+</span></h3></summary><div class="fit-card-content"><p>Technik ist dann wertvoll, wenn sie Abläufe verbessert und für Menschen einen Unterschied macht.</p></div></details>
           </div>
         </div>
       </section>
@@ -388,7 +391,7 @@
       <section class="contact-section" id="kontakt" aria-labelledby="contact-title">
         <div class="contact-glow" aria-hidden="true"></div>
         <div class="contact-inner reveal">
-          <div class="section-kicker"><span>09</span> Projekt anfragen</div>
+          <div class="section-kicker"><span>08</span> Projekt anfragen</div>
           <div class="contact-grid">
             <div class="contact-copy">
               <h2 id="contact-title">Aus einer Idee wird ein<br><em>digitaler Auftritt.</em></h2>
@@ -410,7 +413,7 @@
 
     <footer>
       <span>© 2026 Richard Heim · Deutschland / Remote</span>
-      <nav aria-label="Footer-Navigation"><a href="#leistungen">Leistungen</a><a href="#arbeiten">Arbeiten</a><a href="#preis">Preisrahmen</a><a href="#profil">Profil</a><a href="#kontakt">Kontakt</a><a href="impressum.html">Impressum</a></nav>
+      <nav aria-label="Footer-Navigation"><a href="#leistungen">Leistungen</a><a href="#arbeiten">Arbeiten</a><!-- PREISKALKULATOR DEAKTIVIERT: Zum Reaktivieren hidden entfernen. --><a href="#preis" data-price-link hidden>Preisrahmen</a><a href="#profil">Profil</a><a href="#kontakt">Kontakt</a><a href="impressum.html">Impressum</a></nav>
       <span>Persönlich entwickelt. Klar betreut.</span>
     </footer>
 
