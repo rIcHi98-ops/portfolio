@@ -356,6 +356,44 @@
     }, { passive: true });
   });
 
+  const fitCards = Array.from(document.querySelectorAll("details.fit-card"));
+  const mobileFitCards = window.matchMedia("(max-width: 680px)");
+
+  if (fitCards.length) {
+    function syncFitCards() {
+      fitCards.forEach(function (card) {
+        const summary = card.querySelector(".fit-card-summary");
+        if (summary) summary.tabIndex = mobileFitCards.matches ? 0 : -1;
+        if (mobileFitCards.matches) card.removeAttribute("open");
+        else card.setAttribute("open", "");
+      });
+    }
+
+    fitCards.forEach(function (card) {
+      const summary = card.querySelector(".fit-card-summary");
+
+      if (summary) {
+        summary.addEventListener("click", function (event) {
+          if (!mobileFitCards.matches) event.preventDefault();
+        });
+      }
+
+      card.addEventListener("toggle", function () {
+        if (!mobileFitCards.matches || !card.open) return;
+        fitCards.forEach(function (otherCard) {
+          if (otherCard !== card) otherCard.removeAttribute("open");
+        });
+      });
+    });
+
+    syncFitCards();
+    if (typeof mobileFitCards.addEventListener === "function") {
+      mobileFitCards.addEventListener("change", syncFitCards);
+    } else {
+      mobileFitCards.addListener(syncFitCards);
+    }
+  }
+
   const menuToggle = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".nav-links");
 
