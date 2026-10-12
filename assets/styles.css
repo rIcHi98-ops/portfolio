@@ -1041,6 +1041,30 @@ footer a:focus-visible { color: var(--paper); }
 .legal-grid a { text-decoration: underline; text-underline-offset: 4px; }
 .legal-grid mark { padding: 0 3px; color: var(--ink); background: var(--lime); }
 
+.privacy-hero { background: radial-gradient(circle at 82% 24%, rgba(166,203,204,.11), transparent 30%); }
+.privacy-hero h1 span { color: var(--cyan); }
+.privacy-grid { grid-template-columns: 1fr; }
+.privacy-grid article {
+  min-height: 0;
+  padding: clamp(28px, 4.5vw, 56px);
+  background:
+    radial-gradient(420px circle at 92% 12%, rgba(166,203,204,.045), transparent 70%),
+    rgba(255,255,255,.015);
+}
+.privacy-grid article > span { color: var(--cyan); }
+.privacy-grid h2 { max-width: 850px; margin: 28px 0 22px; }
+.privacy-grid h3 { margin: 30px 0 12px; font-size: 20px; line-height: 1.35; }
+.privacy-grid p,
+.privacy-grid address,
+.privacy-grid li { max-width: 960px; color: var(--paper-muted); font-size: 16px; line-height: 1.78; }
+.privacy-grid p + p { margin-top: 17px; }
+.privacy-grid address { margin: 0 0 20px; font-style: normal; }
+.privacy-grid ul { display: grid; gap: 10px; margin: 18px 0 24px; padding-left: 22px; }
+.privacy-grid a { overflow-wrap: anywhere; }
+.privacy-card-accent { border-left: 3px solid var(--coral); }
+.privacy-card-accent > span { color: var(--coral) !important; }
+.legal-page footer nav a[aria-current="page"] { color: var(--lime); text-decoration: underline; text-underline-offset: 5px; }
+
 @media (max-width: 680px) {
   .legal-main { width: calc(100% - 36px); padding-top: 74px; }
   .legal-hero { min-height: 500px; padding: 70px 0 55px; }
@@ -1048,6 +1072,11 @@ footer a:focus-visible { color: var(--paper); }
   .legal-grid { grid-template-columns: 1fr; }
   .legal-grid article { min-height: 250px; padding: 24px; }
   .legal-grid h2 { margin-top: 46px; }
+  .privacy-grid article { min-height: 0; padding: 30px 22px; }
+  .privacy-grid h2 { margin-top: 24px; font-size: 28px; }
+  .privacy-grid p,
+  .privacy-grid address,
+  .privacy-grid li { font-size: 15px; line-height: 1.72; }
 }
 
 /* Verständliche Ergebnisdarstellung in „Mein Ansatz“ */
